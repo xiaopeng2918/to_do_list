@@ -1,6 +1,5 @@
 import React from 'react'
 import Board from 'react-trello'
-import {useRef} from 'react'
 import './ToDoBoard.css'
 // board数据
 const data = {
@@ -107,13 +106,8 @@ const data = {
 }
 
 const ToDoBoard = () => {
-  const board = useRef();
-  const refHandler = () => {
-    console.log(board);
-  }
   return <>
-    <Board className="board" ref={board} data={data} />
-    <button ref={board} onClick={refHandler}>按钮</button>
+    <Board className="board" data={data} />
   </>
 }
 
