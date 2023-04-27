@@ -13,6 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import styles from './style.module.scss'
+import { Login } from '../../api/login'
 
 function Copyright(props) {
   return (
@@ -30,11 +32,13 @@ function Copyright(props) {
 const theme = createTheme()
 
 export default function SignIn() {
+
   const handleSubmit = (event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
+    Login(data.get('username'),data.get('password'))
     console.log({
-      email: data.get('email'),
+      username: data.get('username'),
       password: data.get('password')
     })
   }
@@ -62,10 +66,10 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="邮箱"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="用户名"
+              name="username"
+              autoComplete="given-name"
               autoFocus
             />
             <TextField
@@ -79,8 +83,8 @@ export default function SignIn() {
               autoComplete="current-password"
             />
             <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="记住密码" />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Sign In
+            <Button type="submit" className={styles.customButton} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+              登录
             </Button>
             <Grid container>
               <Grid item xs>
@@ -89,10 +93,8 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <RouterLink to={`/signup`}>
-                  <Link href="#" variant="body2">
+                <RouterLink className={styles.signup} to={`/signup`}>
                     {'还没有账户？立即注册'}
-                  </Link>
                 </RouterLink>
               </Grid>
             </Grid>

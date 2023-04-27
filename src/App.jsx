@@ -7,9 +7,11 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import React from 'react'
 import ToDoBoard from './ToDoBoard'
-import Login from './components/Login'
-import SignUp from './components/SIgnUp'
+import Login from './views/Login'
+import SignUp from './views/SignUp'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+
 const App = () => {
   return (
     <>
