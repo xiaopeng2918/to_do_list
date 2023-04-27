@@ -9,6 +9,7 @@ import React from 'react'
 import ToDoBoard from './ToDoBoard'
 import Login from './views/Login'
 import SignUp from './views/SignUp'
+import Home from './views/Home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/" element={<ToDoBoard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </Router>
     </>
