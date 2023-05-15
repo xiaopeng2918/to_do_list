@@ -16,3 +16,7 @@ body {
   fill: currentColor;
   overflow: hidden;
 }
+
+a {
+  text-decoration: none;
+}

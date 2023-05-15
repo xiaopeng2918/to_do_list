@@ -7,5 +7,6 @@
   "prettier.tabWidth": 2,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
-  "prettier.semi": false
+  "prettier.semi": false,
+  "px-to-rem.px-per-rem": 70
 }

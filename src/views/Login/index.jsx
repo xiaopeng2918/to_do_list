@@ -32,11 +32,27 @@ function Copyright(props) {
 const theme = createTheme()
 
 export default function SignIn() {
-
   const handleSubmit = (event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    Login(data.get('username'),data.get('password'))
+    const getLocalData = async (username, password) => {
+      const localStorageKey = 'myApiData'
+      let data = localStorage.getItem(localStorageKey)
+      // 如果本地存储中没有数据，则从接口获取并将其保存到本地存储
+      if (data === null) {
+        data = await Login(username, password)
+        localStorage.setItem(localStorageKey, JSON.stringify(data))
+      } else {
+        data = JSON.parse(data)
+      }
+
+      return data
+    }
+    const loadData = async (username, password) => {
+      const data = await getLocalData(username, password)
+      console.log('加载到的数据：', data)
+    }
+    loadData(data.get('username'), data.get('password'))
     console.log({
       username: data.get('username'),
       password: data.get('password')
@@ -94,7 +110,7 @@ export default function SignIn() {
               </Grid>
               <Grid item>
                 <RouterLink className={styles.signup} to={`/signup`}>
-                    {'还没有账户？立即注册'}
+                  {'还没有账户？立即注册'}
                 </RouterLink>
               </Grid>
             </Grid>
