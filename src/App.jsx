@@ -6,23 +6,27 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import React from 'react'
-import ToDoBoard from './ToDoBoard'
+import ToDoBoard from './components/ToDoBoard'
 import Login from './views/Login'
 import SignUp from './views/SignUp'
 import Home from './views/Home'
+import Demo from './components/Demo'
+import Index from './views/Index'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
+          <Route exact path="/" element={<Index />}>
+            <Route path="demo" element={<Demo />} />
+            <Route path="home" element={<Home />} />
+            <Route exact path="board" element={<ToDoBoard />} />
+          </Route>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Home" element={<Home />} />
-          <Route exact path="/" element={<ToDoBoard />} />
-        </Routes> 
+        </Routes>
       </Router>
     </>
   )
