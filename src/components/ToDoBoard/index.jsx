@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Board from "react-trello";
 import { getTaskListByBoardId } from "../../api/board";
-import style from "./style.module.scss";
+// import style from "./style.module.scss";
 const ToDoBoard = () => {
   // board数据
   const [listData, setListData] = useState({
