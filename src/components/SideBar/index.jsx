@@ -1,6 +1,10 @@
-import { IconFont } from '../CustomIcon'
-import style from './style.module.scss'
+import { useState } from "react";
+import { IconFont } from "../CustomIcon";
+import style from "./style.module.scss";
+import Workspace from "./WorkSpace";
+import Dialog from "../Dialog";
 function SideBar() {
+  const [showAddWorkSpaceDialog, setShowAddWorkSpaceDialog] = useState(false);
   return (
     <>
       <div className={style.sidebar}>
@@ -34,58 +38,61 @@ function SideBar() {
             </ul>
           </div>
           <div className={style.sidebar_down}>
-            <div className={style.work_space}>
+            <div className={style.add_work_space}>
               <span>工作区</span>
               <button>
-                <IconFont type="icon-add" />
+                <IconFont
+                  type="icon-add"
+                  onClick={() => {
+                    setShowAddWorkSpaceDialog(true);
+                  }}
+                />
               </button>
             </div>
-            <a href="#11" className={style.mt10}>
-              <span>Workspace</span>
-              <span>
-                <IconFont type="icon-arrowup" />
-              </span>
-            </a>
-            <ul className={style.mt20}>
-              <li>
-                <span className={style.mr10}>
-                  <IconFont type="icon-board" />
-                </span>
-                <span>看板</span>
-              </li>
-              <li>
-                <span className={style.mr10}>
-                  <IconFont type="icon-love" />
-                </span>
-                <span>要点</span>
-              </li>
-              <li>
-                <span className={style.mr10}>
-                  <IconFont type="icon-shitujuzhen_o" />
-                </span>
-                <span>视图</span>
-              </li>
-              <li className={style.posi_re}>
-                <span className={style.mr10}>
-                  <IconFont type="icon-ic_member" />
-                </span>
-                <span>成员列表</span>
-                <span className={style.posi_ab}>
-                  <IconFont type="icon-add" />
-                </span>
-              </li>
-              <li>
-                <span className={style.mr10}>
-                  <IconFont type="icon-setting" />
-                </span>
-                <span>设置</span>
-              </li>
-            </ul>
+            {/* 工作区 */}
+            <Workspace />
+            {/* 添加工作区弹窗 */}
           </div>
         </nav>
+        {showAddWorkSpaceDialog ? (
+          <Dialog>
+            <div className={style.slot_content}>
+              <h2>开始构建工作区吧</h2>
+              <div className={style.fl_col}>
+                <label for="work_space_name">工作区名称</label>
+                <input
+                  id="work_space_name"
+                  type="text"
+                  placeholder="为工作区起一个名字吧！"
+                />
+              </div>
+              <div className={style.fl_col}>
+                <label htmlFor="">工作区描述</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+              </div>
+              <button
+                onClick={() => {
+                  setShowAddWorkSpaceDialog(false);
+                }}
+              >
+                继续
+              </button>
+              <div
+                className={style.close_add_work_space_dialog}
+                onClick={() => {
+                  setShowAddWorkSpaceDialog(false);
+                }}
+              >
+                X
+              </div>
+            </div>
+          </Dialog>
+        ) : (
+          ""
+        )}
       </div>
     </>
-  )
+  );
 }
 
-export default SideBar
+export default SideBar;

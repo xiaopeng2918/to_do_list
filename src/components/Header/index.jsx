@@ -1,15 +1,32 @@
-import style from './style.module.scss'
-import { IconFont } from '../CustomIcon'
+import style from "./style.module.scss";
+import { IconFont } from "../CustomIcon";
+import { useNavigate } from "react-router-dom";
 
-function CustomHeader() {
+function CustomHeader(props) {
+  // 控制用户信息弹窗
+  const updateUserInfoDialog = () => {
+    props.updateShowUserInfoDialogState(!props.currentShowUserInfoDialog);
+  };
+  // 控制工作区弹窗
+  const updateWorkSpaceDialog = () => {
+    props.updateShowWorkSpaceDialogState(!props.currentWorkSpaceDialog);
+  };
+  const navigate = useNavigate();
   return (
     <>
       <header className={style.header}>
         <nav className={style.navbar}>
           <button>logo</button>
-          <a href="#111">网站名称</a>
+          <a
+            href="#111"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            网站名称
+          </a>
           <div className={style.left}>
-            <a href="#11">
+            <a href="#11" onClick={updateWorkSpaceDialog}>
               工作区 <IconFont type="icon-arrow-down" />
             </a>
             <a href="#11">
@@ -43,7 +60,7 @@ function CustomHeader() {
                 <IconFont type="icon-DarkTheme" />
               </a>
             </div>
-            <div className={style.ja_center}>
+            <div className={style.ja_center} onClick={updateUserInfoDialog}>
               <a href="#11" className={style.user}>
                 <IconFont type="icon-user-circle" />
               </a>
@@ -52,7 +69,7 @@ function CustomHeader() {
         </nav>
       </header>
     </>
-  )
+  );
 }
 
-export default CustomHeader
+export default CustomHeader;

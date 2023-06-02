@@ -1,0 +1,74 @@
+.your_workspace {
+  padding-bottom: 20px;
+  margin-top: 10px;
+  .fl_space_between {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .m_left_15 {
+      margin-left: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .fl_start_list {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      li {
+        padding: 5px 10px;
+
+        background-color: #f1f2f4;
+        margin-right: 5px;
+        border-radius: 5px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: #dcdfe4;
+        }
+        span {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.recent_board_list {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .bimg_none {
+    a.p8 {
+      background-image: none;
+      background-color: #f1f2f4;
+      color: black;
+      font-size: 14px;
+      font-weight: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .board_item {
+    width: 23%;
+    margin: 0 2% 2% 0;
+    .p8 {
+      display: block;
+      padding: 8px;
+      height: 100px;
+      border-radius: 3px;
+      // background-color: red;
+      background-image: url(https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x270/52018f4f57d26d211138e8587df9820c/photo-1678971916523-0fe8cd6fc252.jpg);
+      background-size: cover;
+      text-align: left;
+      color: #fff;
+      font-weight: 580;
+      font-size: 16px;
+    }
+  }
+}

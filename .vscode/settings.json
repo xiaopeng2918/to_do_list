@@ -1,12 +1,13 @@
-{
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.printWidth": 120,
-  "prettier.tabWidth": 2,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "none",
-  "prettier.semi": false,
-  "px-to-rem.px-per-rem": 70
-}
+// {
+//   "editor.defaultFormatter": "esbenp.prettier-vscode",
+//    "[javascript]": {
+//     "editor.defaultFormatter": "esbenp.prettier-vscode"
+//   },
+//   "prettier.printWidth": 120,
+//   "prettier.tabWidth": 2,
+//   "prettier.singleQuote": true,
+//   "prettier.trailingComma": "none",
+//   "prettier.semi": false,
+//   "px-to-rem.px-per-rem": 70,
+//   "debug.javascript.autoAttachFilter": "always"
+// }

@@ -8,9 +8,11 @@
   margin-top: 40px;
   margin-left: 16px;
   margin-right: 16px;
-  max-width: 825px;
+  // max-width: 825px;
   min-width: 288px;
   width: 100%;
+  height: calc(100vh - 48px);
+  overflow-y: scroll;
   .fl_start {
     display: flex;
     justify-content: flex-start;
@@ -62,48 +64,11 @@
       }
     }
   }
-  .your_workspace {
-    padding-bottom: 20px;
-    margin-top: 40px;
-    .fl_start_fz16 {
-      display: flex;
-      justify-content: flex-start;
-      font-weight: 900;
-      font-size: 16px;
-    }
-    .fl_space_between {
-      margin-top: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      .m_left_15 {
-        margin-left: 15px;
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .fl_start_list {
-        list-style: none;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        li {
-          padding: 5px 10px;
-
-          background-color: #f1f2f4;
-          margin-right: 5px;
-          border-radius: 5px;
-          &:last-child {
-            margin-right: 0;
-          }
-          &:hover {
-            cursor: pointer;
-            background-color: #dcdfe4;
-          }
-          span {
-            margin-right: 5px;
-          }
-        }
-      }
-    }
+  .fl_start_fz16 {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+    font-weight: 900;
+    font-size: 16px;
   }
 }

@@ -1,12 +1,30 @@
 .container {
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-top: 48px;
+  height: calc(100vh - 48px);
+  overflow-y: hidden;
   .main_container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    min-height: calc(100vh - 48px);
+    height: calc(100vh - 48px);
     text-align: center;
     min-width: 70%;
+    position: relative;
+    .flex1 {
+      flex: 1;
+      margin-left: 290px;
+      overflow: hidden;
+    }
+  }
+  .userinfo_dialog_container {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .work_space_dialog_container {
+    position: absolute;
+    top: 5px;
+    left: 102px;
   }
 }

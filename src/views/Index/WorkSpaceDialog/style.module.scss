@@ -1,0 +1,24 @@
+.work_space_wrapper {
+  width: 220px;
+  background-color: #fff;
+  top: 5px;
+  padding: 10px 0;
+  border-radius: 5px;
+  padding-bottom: 0;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  span {
+    display: inline-block;
+    padding: 0 0 15px 15px;
+  }
+  & > div {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #CCC;
+    align-items: center;
+    &:hover {
+      background-color: #f1f2f4;
+    }
+  }
+}

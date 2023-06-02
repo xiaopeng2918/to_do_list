@@ -1,4 +1,7 @@
-.home_left_sidebar_contianer {
+.sidebar {
+  position: fixed;
+  top: 48px;
+  .home_left_sidebar_contianer {
     margin-top: 40px;
     padding: 0 16px;
     .sidebar_top {
@@ -32,36 +35,8 @@
     .sidebar_down {
       padding-top: 12px;
       padding-bottom: 40px;
-      .mt10 {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-      }
-      .mt20 {
-        list-style: none;
-        margin-top: 20px;
-        li {
-          border-radius: 4px;
-          margin-bottom: 4px;
-          text-align: left;
-          padding: 5px 0 5px 35px;
-          .mr10 {
-            margin-right: 10px;
-          }
-          &:hover {
-            cursor: pointer;
-            background-color: #dcdfe4;
-          }
-        }
-        .posi_re {
-          position: relative;
-          .posi_ab {
-            position: absolute;
-            right: 10px;
-          }
-        }
-      }
-      .work_space {
+
+      .add_work_space {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -79,3 +54,67 @@
       }
     }
   }
+}
+.slot_content {
+  padding: 50px 80px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  .fl_col {
+    display: flex;
+    margin-top: 35px;
+    flex-direction: column;
+    border-radius: 4px;
+    input {
+      width: 500px;
+      height: 45px;
+      padding: 8px 12px;
+      border: 2px solid gray;
+      outline: none;
+      border-radius: 3px;
+      &:focus {
+        border-color: #388bff;
+        outline: none;
+      }
+    }
+    textarea {
+      resize: none;
+      width: 500px;
+      padding: 8px 12px;
+      outline: none;
+      border: 2px solid gray;
+      border-radius: 3px;
+      &:focus {
+        border-color: #388bff;
+        outline: none;
+      }
+    }
+  }
+  .close_add_work_space_dialog {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #ccc;
+      border-radius: 5px;
+    }
+  }
+  button {
+    width: 500px;
+    margin-top: 30px;
+    background-color: #0055cc;
+    padding: 6px 12px;
+    line-height: 1.5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 85, 204, 0.8);
+    }
+  }
+}
